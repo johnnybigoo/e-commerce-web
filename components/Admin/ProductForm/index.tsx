@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
 import { Form, Col, Row } from 'react-bootstrap';
 import { faTimes, faGamepad } from '@fortawesome/free-solid-svg-icons';
-import styles from '../../../styles/AdminPanel.module.css';
+//import styles from '../../../styles/AdminPanel.module.css';
+import styles from '../styles.module.css';
+
 import StyledButton from '../../shared/StyledButton';
 import ProductImage from './ProductImage';
 
