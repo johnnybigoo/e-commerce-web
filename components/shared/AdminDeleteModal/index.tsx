@@ -1,14 +1,12 @@
 import React from 'react';
-//import styles from '../../../styles/AdminPanel.module.css';
-import styles from './styles.module.css';
-
 import { Modal, Row, Col } from 'react-bootstrap';
 import { faTrash, faTimes } from '@fortawesome/free-solid-svg-icons';
+import styles from './styles.module.css';
 import StyledButton from '../StyledButton';
 
 interface AdminDeleteModalProps {
     show: boolean,
-    handleClose: (success?: boolean) => void,
+    handleClose: (success: boolean) => void,
     target: String
 }
 
@@ -26,12 +24,11 @@ const AdminDeleteModal: React.FC<AdminDeleteModalProps> = ({ show, handleClose, 
                     </Col>
 
                     <Col lg={6} xs>
-                        <div onClick={() => handleClose(true)}>
+                        <div onClick={() => handleClose(false)}>
                             <StyledButton icon={faTimes} action={"Cancelar"} type_button="blue" />
                         </div>
                     </Col>
                 </Row>
-
             </Modal.Body>
         </Modal>
     )

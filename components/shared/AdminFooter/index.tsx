@@ -17,5 +17,3 @@ const AdminFooter: React.FC = () => {
         </Container>
     )
 }
-
-export default AdminFooter;

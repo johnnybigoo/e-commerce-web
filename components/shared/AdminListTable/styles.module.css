@@ -11,30 +11,34 @@
     border-spacing: 0 1em;
 }
 
-/*
-estamos determinando que iremos apenas aplicar estilo nos elementos que seguirem
-a ordem abaixo
+.table_line {
+    background-color: var(--color-background);
+    padding-right: 110px;
+}
 
+.table_line:hover {
+    color: white!important;
+}
+
+/* 
+estamos determinando que iremos apenas aplicar estilo nos elementos que seguirem 
+a ordem abaixo
 <* .admin_panel>
     <table>
-    <thread>
+        <thead>
         <tr>
-        <th></th> -> aqui será aplicado o estilo
+            <th></th> -> aqui será aplicado o estilo
         </tr>
-    </thread>
+        </thead>
     </table>
 </* .admin_panel>
-
 o mesmo se aplica nos demais estilos abaixo
- */
+*/
+
 .admin_panel table thead tr th {
     text-align: left;
 }
 
-/*
-    aqui estamos determinando que apenas o útimo elemento do tipo th
-    terá esse css aplicado
-  */
 .admin_panel table thead tr th:last-of-type {
     text-align: center;
 }
@@ -45,7 +49,7 @@ o mesmo se aplica nos demais estilos abaixo
 }
 
 .admin_panel table tbody tr:hover {
-    color: white!important;
+    color: white !important;
 }
 
 .admin_panel table tr td div:hover {

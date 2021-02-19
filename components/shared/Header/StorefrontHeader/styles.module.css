@@ -1,19 +1,23 @@
 .background {
-    background-color: var(--color-primary);
-    padding: 20px;
-    font-size: 1.4rem;
-    font-weight: 500;
+  background-color: var(--color-primary);
+  padding: 20px;
+  font-size: 1.4rem;
+  font-weight: 500;
 }
 
 .background svg {
-    cursor: pointer;
-    transition: color 0.2s;
+  cursor: pointer;
+  transition: color 0.2s;
 }
 
 .background svg:hover {
-    color: var(--color-hover);
+  color: var(--color-hover);
 }
 
 .background svg:active {
-    color: var(--color-active);
+  color: var(--color-active);
+}
+
+.hidden {
+  display: none;
 }

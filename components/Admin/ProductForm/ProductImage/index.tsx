@@ -3,7 +3,6 @@ import { Col } from 'react-bootstrap';
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
 import StyledButton from '../../../shared/StyledButton';
 
-//import styles from '../../../../styles/ProductForm.module.css';
 import styles from './styles.module.css';
 
 // estamos recebendo a função de setImage que virá do ProductForm, necessitamos dela pois vamos mandar o arquivo para a api e para exibir a imagem na tela utilizaremos o método Url.createObjectUrl que irá criar uma url fictícia para a imagem e assim a mesma será exibida na tela.
@@ -15,7 +14,7 @@ interface ProductImageProps {
 
 const ProductImage: React.FC<ProductImageProps> = ({ setImage, productImage }) => {
     // esse estado é utilizado para armazenar a url da imagem que será exibida na tela
-    const [imageToShow, setImageToShow] = useState('/assets/product-image.png');
+    const [imageToShow, setImageToShow] = useState('/assets/product_image.png');
     // utilizarames um ref hook do react para podermos ter acesso mais fácil ao input do tipo file que esta escondido na tela.
     const imageInputRef = useRef(null);
 

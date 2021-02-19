@@ -5,23 +5,23 @@
     margin-top: 100px;
 }
 
-.background a svg:hover {
-    cursor: pointer;
-    color: var(--color-hover);
-    transition: color 0.2s;
-}
-
 .name {
     color: var(--color-gray-light);
     font-size: 0.9rem;
     margin-right: 10px;
 }
 
+.background a svg:hover {
+    cursor: pointer;
+    color: var(--color-hover);
+    transition: color 0.2s;
+}
+
 .active {
     color: var(--color-active);
 }
 
-.menu  {
+.menu {
     display: flex;
     align-items: center;
     justify-content: left;
@@ -33,22 +33,16 @@
     justify-content: flex-end;
 }
 
-.name {
-    color: var(--color-gray-light);
-    font-size: 0.9rem;
-    margin-right: 10px;
-}
-
 @media screen and (max-width: 990px) {
-.background {
-    margin: 20px 1px;
+    .background {
+        margin: 20px 1px;
     }
 
-.menu  {
-    justify-content: space-around;
+    .menu {
+        justify-content: space-around;
     }
 
-.profile {
-    display: none;
+    .profile {
+        display: none;
     }
 }

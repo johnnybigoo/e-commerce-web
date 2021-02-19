@@ -1,7 +1,5 @@
 import React from 'react';
-//import styles from '../../../styles/AdminPanel.module.css';
 import styles from './styles.module.css';
-
 import { Table } from 'react-bootstrap';
 import Pagination from '../Pagination';
 import Meta from '../../../dtos/Meta';
@@ -16,8 +14,7 @@ interface AdminListTableProps {
     meta?: Meta;
 }
 
-const AdminListTable: React.FC<AdminListTableProps> =
-    ({ children, first_title, second_title, third_title, fourth_title, fifth_title, sixth_title, meta }) => {
+const AdminListTable: React.FC<AdminListTableProps> = ({ children, first_title, second_title, third_title, fourth_title, fifth_title, sixth_title, meta }) => {
     return (
         <div className={styles.admin_panel}>
             <Table borderless={true} hover={true} responsive={true}>

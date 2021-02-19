@@ -1,8 +1,7 @@
 import React from 'react';
-import { Col, Row } from 'react-bootstrap';
 import AdminHeader from '../AdminHeader';
 import AdminFooter from '../AdminFooter';
-
+import { Col, Row } from 'react-bootstrap';
 import LateralMenu from '../LateralMenu';
 
 const AdminComponent: React.FC = ({ children }) => {
@@ -14,15 +13,10 @@ const AdminComponent: React.FC = ({ children }) => {
 
             <Col lg={9}>
                 <div className="d-flex flex-column sticky-footer-wrapper container">
-
                     <AdminHeader />
 
                     <div className="flex-fill text-center">
                         {children}
-                    </div>
-
-                    <div className="flex-fill text-center">
-                        { children }
                     </div>
 
                     <AdminFooter />
