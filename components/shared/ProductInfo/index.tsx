@@ -1,19 +1,18 @@
+// Adicionando o component ProductInfo
 import { Button } from 'react-bootstrap';
 import styles from './styles.module.css';
-import ProductHome from '../../../dtos/ProductHome';
 
 interface ProductInfoProps {
   type?: string;
-  product: ProductHome;
 }
 
-const ProductInfo: React.FC<ProductInfoProps> = ({ type = 'normal', product }) => {
+const ProductInfo: React.FC<ProductInfoProps> = ({ type = 'normal' }) => {
   return (
     <div className={styles.product}>
       <div>
         <img
-          src={product.image_url}
-          alt={product.name}
+          src="https://meups.com.br/wp-content/uploads/2018/01/God-of-War-4-900x503.jpg"
+          alt="Product Game"
           className={styles.image}
         />
       </div>
@@ -21,10 +20,10 @@ const ProductInfo: React.FC<ProductInfoProps> = ({ type = 'normal', product }) =
       <div className={styles.product_details}>
         <div>
           <p>
-            {product.name}
+            God of War
           </p>
           <p>
-            {product.description}
+            Playstation 4
           </p>
         </div>
 
@@ -34,7 +33,7 @@ const ProductInfo: React.FC<ProductInfoProps> = ({ type = 'normal', product }) =
               `${(type === 'highlighted' ? 'btn btn-info' : styles.normal_button)}`
             }
           >
-            {`R$ ${product.price}`}
+            R$ 19,99
           </Button>
         </div>
       </div>
