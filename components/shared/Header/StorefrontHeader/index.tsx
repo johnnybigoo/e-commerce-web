@@ -5,8 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faShoppingCart, faUserCircle } from '@fortawesome/free-solid-svg-icons';
 import Logo from '../../Logo';
 import Link from 'next/link';
-
-import ProductSearchService from '../../../../util/ProductSearchService';
+// import ProductSearchService from '../../../../util/ProductSearchService';
 import { useRouter } from 'next/router';
 
 const CustomerHeader: React.FC = () => {
