@@ -244,6 +244,7 @@ const Search: React.FC = () => {
 			</Row>
 
 			{
+				// Ajustando o componente de Paginação
 				data?.meta?.total > 0 &&
 				<Pagination
 					className={styles.pagination}
@@ -254,5 +255,6 @@ const Search: React.FC = () => {
 		</MainComponent>
 	);
 }
+
 
 export default Search;
