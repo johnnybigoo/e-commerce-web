@@ -3,7 +3,6 @@ import api from './api';
 
 import ProductSearch from '../dtos/ProductSearch';
 import Meta from '../dtos/Meta';
-
 interface SearchIndexData {
 	products: ProductSearch[];
 	meta: Meta;

@@ -7,50 +7,75 @@ import useSwr from 'swr';
 import HomeService from '../services/home';
 
 import { toast } from 'react-toastify';
+// Ajustes finais da pesquisa
+import { useRouter } from 'next/router';
 
 const Storefront: React.FC = () => {
-  const { data, error } = useSwr('/storefront/v1/home', HomeService.index);
-  const { featured, last_releases, cheapest } = { ...data };
+	const { data, error } = useSwr('/storefront/v1/home', HomeService.index);
+	const { featured, last_releases, cheapest } = { ...data };
+	const router = useRouter();
 
-  if (error) {
-    toast.error('Erro ao obter dados da home!');
-    console.log(error);
-  }
-  return (
-    <MainComponent>
-      <Carousel className={styles.carousel}>
-        {
-          featured?.slice(0, 3)?.map(
-            product => (
-              <Carousel.Item key={product.id}>
-                <img
-                  className={`d-block w-100 ${styles.carousel_image}`}
-                  src={product.image_url}
-                  alt={product.name}
-                />
-              </Carousel.Item>
-            )
-          )
-        }
-      </Carousel>
+	if (error) {
+		toast.error('Erro ao obter dados da home!');
+		console.log(error);
+	}
+	return (
+		<MainComponent>
+			<Carousel className={styles.carousel}>
+				{
+					featured?.slice(0, 3)?.map(
+						product => (
+							<Carousel.Item key={product.id}>
+								<img
+									className={`d-block w-100 ${styles.carousel_image}`}
+									src={product.image_url}
+									alt={product.name}
+								/>
+							</Carousel.Item>
+						)
+					)
+				}
+			</Carousel>
 
-      <HightlightedProducts
-        title="Ofertas da semana"
-        type="highlighted"
-        products={cheapest}
-      />
+			<HightlightedProducts
+				title="Ofertas da semana"
+				type="highlighted"
+				products={cheapest}
+				handleSeeMore={
+					() => router.push({
+						pathname: '/Search',
+						query: {
+              order: 'price',
+							direction: 'asc'
+						}
+					})
+				}
+			/>
 
-      <HightlightedProducts
-        title="Lançamentos"
-        products={last_releases}
-      />
+			<HightlightedProducts
+				title="Lançamentos"
+				products={last_releases}
+				handleSeeMore={
+					() => router.push({
+						pathname: '/Search',
+						query: {
+              order: 'release_date',
+							direction: 'desc'
+						}
+					})
+				}
+			/>
 
-      <HightlightedProducts
-        title="Mais populares"
-        products={featured}
-      />
-    </MainComponent>
-  )
+			<HightlightedProducts
+				title="Mais populares"
+				products={featured}
+				handleSeeMore={
+					() => router.push({ pathname: '/Search' })
+				}
+			/>
+		</MainComponent>
+	)
 }
 
 export default Storefront;
+// Ajustes finais da pesquisa
