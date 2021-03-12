@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import styles from './styles.module.css';
 
+// Ajustando a página de pesquisa (Parte 1 e 2)
 import ProductInfo from '../../components/shared/ProductInfo';
 
 import useSwr from 'swr';
