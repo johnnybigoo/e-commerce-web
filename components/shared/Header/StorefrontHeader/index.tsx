@@ -1,14 +1,13 @@
-// Ajustando nossa pesquisa no header
 import { useState } from 'react';
 import styles from './styles.module.css';
 import { InputGroup, FormControl, Row, Col } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faShoppingCart, faUserCircle } from '@fortawesome/free-solid-svg-icons';
 import Logo from '../../Logo';
-import Link from 'next/link';
 
-import ProductSearchService from '../../../../util/ProductSearchService';
 import { useRouter } from 'next/router';
+
+import LoggedService from '../../../../util/LoggedService';
 
 const CustomerHeader: React.FC = () => {
 	const [search, setSearch] = useState('');
@@ -17,8 +16,14 @@ const CustomerHeader: React.FC = () => {
 
 	const handleSearch = (): void => {
 		router.push(`
-					/Search?search=${search}&length=12&page=1&order=price&direction=asc
-			`);
+      /Search?search=${search}&length=12&page=1&order=price&direction=asc
+    `);
+	}
+
+	const handleUserRedirect = (): void => {
+		router.push(
+			LoggedService.execute() ? '/Profile' : 'Auth/Admin'
+		)
 	}
 
 	return (
@@ -67,11 +72,11 @@ const CustomerHeader: React.FC = () => {
 							</Col>
 
 							<Col>
-								<Link href="/Auth/Login">
-									<a>
-										<FontAwesomeIcon icon={faUserCircle} color="var(--color-gray-light)" />
-									</a>
-								</Link>
+								<FontAwesomeIcon
+									icon={faUserCircle}
+									color="var(--color-gray-light)"
+									onClick={handleUserRedirect}
+								/>
 							</Col>
 						</Row>
 					</Col>
